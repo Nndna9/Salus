@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Salus - Body Pain Guide",
+  "version": "1.0",
+  "description": "Age-specific body pain information guide",
+  "icons": {
+    "128": "LOGO.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "LOGO.png"
+  },
+  "permissions": [
+    "activeTab"
+  ]
+}

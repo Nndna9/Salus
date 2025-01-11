@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Body Pain Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            width: 800px;
+            height: 600px;
+        }
+
+        .body-container {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: white;
+        }
+
+        .body-container svg {
+            height: 500px;
+            width: auto;
+            /* Added to ensure SVG maintains aspect ratio */
+            transform: scale(0.8);
+            transform-origin: center;
+        }
+
+        .info-panel {
+            width: 300px;
+            background-color: #f0f0f0;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .body-part {
+            fill: #8FC2D5;
+            cursor: pointer;
+            transition: fill 0.3s;
+            /* Added to ensure SVG paths are visible */
+            stroke: #666;
+            stroke-width: 1;
+        }
+
+        .body-part:hover {
+            fill: #FF6B6B;
+        }
+
+        .body-part.selected {
+            fill: #FF6B6B;
+        }
+
+        .age-selector {
+            margin-bottom: 20px;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 8px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        #painInfo {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 15px;
+        }
+
+        #painInfo h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        #painInfo ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        #painInfo li {
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        #painInfo li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #FF6B6B;
+        }
+
+        .know-more-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #FF6B6B;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .know-more-btn:hover {
+            background-color: #ff5252;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="body-container">
+            <svg viewBox="0 0 300 600" xmlns="http://www.w3.org/2000/svg">
+                <path class="body-part" id="head" d="M120 60 C120 35, 180 35, 180 60 C180 75, 170 90, 150 100 C130 90, 120 75, 120 60 Z" />
+                <path class="body-part" id="neck" d="M135 100 L165 100 C165 115, 160 120, 150 125 C140 120, 135 115, 135 100 Z" />
+                <path class="body-part" id="chest" d="M135 125 C135 120, 165 120, 165 125 L175 190 C175 200, 125 200, 125 190 Z" />
+                <path class="body-part" id="abdomen" d="M125 190 C125 190, 175 190, 175 190 L180 280 C180 290, 120 290, 120 280 Z" />
+                <path class="body-part" id="left-arm" d="M125 135 C120 135, 110 140, 100 150 L80 200 C75 210, 85 215, 90 210 L110 170 Z" />
+                <path class="body-part" id="right-arm" d="M175 135 C180 135, 190 140, 200 150 L220 200 C225 210, 215 215, 210 210 L190 170 Z" />
+                <path class="body-part" id="left-forearm" d="M80 200 L60 260 C55 270, 65 280, 70 270 L90 210 Z" />
+                <path class="body-part" id="right-forearm" d="M220 200 L240 260 C245 270, 235 280, 230 270 L210 210 Z" />
+                <path class="body-part" id="left-hand" d="M60 260 C55 270, 45 280, 50 290 C60 300, 70 280, 70 270 Z" />
+                <path class="body-part" id="right-hand" d="M240 260 C245 270, 255 280, 250 290 C240 300, 230 280, 230 270 Z" />
+                <path class="body-part" id="left-leg" d="M120 280 L140 280 L135 380 L115 380 Z" />
+                <path class="body-part" id="right-leg" d="M160 280 L180 280 L185 380 L165 380 Z" />
+                <path class="body-part" id="left-lower-leg" d="M115 380 L135 380 L130 500 C125 510, 115 510, 110 500 Z" />
+                <path class="body-part" id="right-lower-leg" d="M165 380 L185 380 L190 500 C195 510, 185 510, 180 500 Z" />
+                <path class="body-part" id="left-foot" d="M110 500 L130 500 L135 510 L105 510 Z" />
+                <path class="body-part" id="right-foot" d="M180 500 L190 500 L195 510 L175 510 Z" />
+            </svg>
+        </div>
+        <div class="info-panel">
+            <div class="age-selector">
+                <h3>Select Age Group</h3>
+                <select id="ageGroup">
+                    <option value="children">Children (0-12 years)</option>
+                    <option value="teenagers">Teenagers (13-19 years)</option>
+                    <option value="young-adults">Young Adults (20-39 years)</option>
+                    <option value="middle-aged">Middle-Aged Adults (40-59 years)</option>
+                    <option value="older-adults">Older Adults (60+ years)</option>
+                </select>
+            </div>
+            <div id="painInfo">
+                <h3>Select a body part to see pain information</h3>
+            </div>
+            <button class="know-more-btn" id="knowMoreBtn">Know More</button>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
