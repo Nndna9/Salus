@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salus</title>
+    <link rel="icon" type="image/x-icon" href="LOGO.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            height: 60px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #007BFF;
+        }
+
+        .hero {
+            position: relative;
+            text-align: center;
+            padding: 100px 20px;
+            background: url('andreypopov230102025.jpg') center/cover no-repeat;
+            color: white;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero h1,
+        .hero p {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .sections {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            padding: 40px 20px;
+            max-width: 100%;
+            margin: auto;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .section img {
+            flex: 1;
+            max-width: 45%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-content {
+            flex: 1;
+            text-align: left;
+            max-width: 70%;
+        }
+
+        .section-content h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .section-content p {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .section-content button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .section-content button:hover {
+            background-color: #0056b3;
+        }
+
+        .section-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: url('1619112871426.jpg') center/cover no-repeat;
+            padding: 60px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .section-box .section-content {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .sos-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 20px 40px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .sos-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .sos-button:active {
+            transform: scale(1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+
+        footer {
+            background-color: #333;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 0.9em;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="LOGO.png" alt="Logo">
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="map.html">Get Help</a>
+            <a href="doc.html">Sign In</a>
+            <a href="up.html">Register</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>SALUS</h1>
+        <p>Your Health, Simplified: Chat with Our Symptom Checker and Find Care Near You!</p>
+    </section>
+
+    <div class="sections">
+        <div class="section">
+            <div class="section-content">
+                <h2>CHAT WITH AI</h2>
+                <p>Our intelligent healthcare chatbot is your personal health assistant, designed to quickly analyze
+                    your symptoms and provide potential diagnoses. It also helps you locate nearby hospitals and clinics
+                    for prompt medical attention. Accessible 24/7, the chatbot ensures you get the information and
+                    support you need, right when you need it.</p>
+                <button onclick="window.location.href='index.html';">Chat AI</button>
+            </div>
+            <img src="medical-appointment-doctor-healthcare-40568.jpeg.jpg" alt="Doctors shaking hands">
+        </div>
+
+        <div class="section-box">
+            <div class="section-content">
+                <h2>WHERE ARE YOU EXPERIENCING PAIN?</h2>
+                <p>Point the area which hurts and we will find the cause and cure for it.</p>
+                <button onclick="window.location.href='human.html';">Locate Pain</button>
+            </div>
+        </div>
+    </div>
+    <button class="sos-button" onclick="triggerSOS()">SOS</button>
+
+    <footer>
+        Empowering innovation, one click at a time. © 2025 SALUS. All rights reserved.
+    </footer>
+    <script>
+        function triggerSOS() {
+            const confirmed = confirm("Are you sure you want to send an SOS alert?");
+            if (confirmed) {
+                // Example: Send an alert (can be replaced with actual API call)
+                alert("SOS alert has been sent!");
+                // Alternatively, redirect to an emergency page
+                // window.location.href = "https://emergency-services.example.com";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

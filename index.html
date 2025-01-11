@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Chatbot</title>
+     <link rel="icon" type="image/x-icon" href="LOGO.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <img src="LOGO.png" alt="Logo">
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="map.html">Get Help</a>
+            <a href="doc.html">Sign In</a>
+            <a href="up.html">Register</a>
+        </nav>
+    </header>
+    <div class="headers">
+        <h1>Healthcare Assistant</h1>
+    </div>
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box">
+            <div class="message bot-message">
+                Hello! I'm your healthcare assistant. Please describe your symptoms.
+            </div>
+        </div>
+        <div class="typing-indicator" id="typing-indicator">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <div class="input-container">
+            <input type="text" id="user-input" placeholder="Describe your symptoms...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
